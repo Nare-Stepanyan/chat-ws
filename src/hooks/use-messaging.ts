@@ -17,8 +17,8 @@ export const useMessaging = (): [Message[], (message: Message) => void] => {
     );
 
     return () => {
-      console.log(newMessageOff, "newMessageOff");
-      console.log(loadMessagesOff, "loadMessagesOff");
+      newMessageOff();
+      loadMessagesOff();
     };
   }, []);
 

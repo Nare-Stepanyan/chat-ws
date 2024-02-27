@@ -4,6 +4,6 @@ export const MESSAGE_TYPES = {
 };
 
 export const MESSAGE_EVENTS_TYPES = {
-  ADD_MESSAGE: "new_message",
+  ADD_MESSAGE: "add_message",
   UPDATE_MESSAGES: "update_messages",
 };

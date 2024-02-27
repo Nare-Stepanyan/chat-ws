@@ -10,10 +10,7 @@ type ListenerInfo = {
 class EventEmitter {
   listeners: ListenerInfo = {};
 
-  on(
-    event: string,
-    listener: Function
-  ): (event: string, listenerId: string) => void {
+  on(event: string, listener: Function): () => void {
     const id = Math.random().toString(36).substr(2, 9);
 
     if (!this.listeners[event]) {

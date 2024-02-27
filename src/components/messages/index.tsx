@@ -1,12 +1,9 @@
-import React, { FC, useEffect, useRef } from "react";
-import { Message } from "../../type";
+import React, { useEffect, useRef } from "react";
+import { useMessaging } from "../../hooks/use-messaging";
 
-type MessageListPropTypes = {
-  messages: Message[];
-};
-
-const MessageList: FC<MessageListPropTypes> = ({ messages }) => {
+const MessageList = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const [messages] = useMessaging();
 
   useEffect(() => {
     if (chatContainerRef.current) {

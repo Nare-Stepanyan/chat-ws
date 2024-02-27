@@ -1,12 +1,12 @@
 import { Socket, io } from "socket.io-client";
 import { MESSAGE_EVENTS_TYPES, MESSAGE_TYPES } from "../constants";
 import { Message } from "../type";
-import EventEmitter from "events";
+import EventEmitter from "../helpers/event-emitter";
 
 class SocketProvider {
   private socket: Socket | null = null;
   public eventEmitter: EventEmitter = new EventEmitter();
-
+  
   constructor() {
     this.connect();
   }

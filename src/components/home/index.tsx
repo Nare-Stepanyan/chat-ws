@@ -1,14 +1,12 @@
 import React, { FC, useEffect } from "react";
 import MessageList from "../messages";
 import { socketProvider } from "../../providers/socket-provider";
-import { useMessaging } from "../../hooks/use-messaging";
 import SendMessage from "../send-message";
 import { useAppDispatch, useAppSelector } from "../app/hook";
 import { selectUser, setUser } from "../../store/user/userSlice";
 import { useNavigate } from "react-router";
 
 const Home: FC = () => {
-  const [messages] = useMessaging();
   const dispatch = useAppDispatch();
   const selector = useAppSelector;
   const user = selector(selectUser);
@@ -32,7 +30,7 @@ const Home: FC = () => {
         </button>
       </div>
 
-      <MessageList messages={messages} />
+      <MessageList />
       <SendMessage />
     </>
   );
