@@ -2,14 +2,18 @@ import React, { FC, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useMessaging } from "../../hooks/use-messaging";
 import Button from "../button";
+import { useAppSelector } from "../app/hook";
+import { selectUser } from "../../store/user/userSlice";
 
 const SendMessage: FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [_, sendMessage] = useMessaging();
+  const user = useAppSelector(selectUser);
+
   const handleSendMessage = () => {
     const message = {
       id: uuidv4(),
-      userName: "USER",
+      userName: user.userName,
       message: inputValue,
       date: new Date().toISOString(),
     };
