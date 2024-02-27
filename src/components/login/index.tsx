@@ -21,6 +21,7 @@ const LoginPage: React.FC = () => {
     );
     if (user) {
       dispatch(setUser(user));
+      localStorage.setItem("user", JSON.stringify(user));
 
       navigate("/home");
     } else {

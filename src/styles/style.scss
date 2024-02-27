@@ -131,3 +131,15 @@ body {
   text-align: center;
   padding-top: 50px;
 }
+.logout {
+  padding: 10px;
+  color: grey;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px;
+}
