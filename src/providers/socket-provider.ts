@@ -6,7 +6,7 @@ import EventEmitter from "../helpers/event-emitter";
 class SocketProvider {
   private socket: Socket | null = null;
   public eventEmitter: EventEmitter = new EventEmitter();
-  
+
   constructor() {
     this.connect();
   }
@@ -26,11 +26,11 @@ class SocketProvider {
     this.eventEmitter.emit(MESSAGE_EVENTS_TYPES.UPDATE_MESSAGES, messages);
   }
 
-  public sendMessage(type: string, data: any) {
+  public sendMessage(data: Message) {
     if (!this.socket) {
       return;
     }
-    this.socket.emit(type, data);
+    this.onNewMessage(data);
   }
 }
 

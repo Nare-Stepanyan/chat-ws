@@ -31,7 +31,7 @@ export const useMessaging = (): [Message[], (message: Message) => void] => {
   };
 
   const sendMessage = (message: Message) => {
-    socketProvider.sendMessage(MESSAGE_TYPES.NEW_MESSAGE, message);
+    socketProvider.sendMessage(message);
   };
   return [messages, sendMessage];
 };
